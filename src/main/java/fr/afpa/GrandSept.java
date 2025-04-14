@@ -2,6 +2,10 @@ package fr.afpa;
 
 public class GrandSept {
 
+    /**
+     * 
+     * @param number Nombre de lignes et colonnes choisis
+     */
     public static void pyramide(int number) {
         char asterisk = '*';
         int i = 0;
@@ -13,6 +17,10 @@ public class GrandSept {
         }
     }
 
+    /**
+     * 
+     * @param number Nombre de lignes et colonnes choisis
+     */
     public static void triangle(int number) {
         char asterisk = '*';
         int i = 0;
