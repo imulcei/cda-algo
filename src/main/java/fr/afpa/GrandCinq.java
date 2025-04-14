@@ -1,5 +1,7 @@
 package fr.afpa;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class GrandCinq {
@@ -99,6 +101,42 @@ public class GrandCinq {
         }
 
         double[] result = { min, max };
+        return result;
+    }
+
+    /**
+     * Solution pour la fonction "searchingIndexes" en utilisant la généricité.
+     * 
+     * Le 'T' peut être vu comme un joker.
+     * C'est le compilateur qui déduira le type en fonction du contexte d'appel. 
+     * 
+     * @param <T> Le type du tableau à tratier
+     * @param array Le tableau à traiter
+     * @return La ArrayList résultat
+     */
+    static public <T extends Number & Comparable<T>> ArrayList<T> searchingIndexes(T[] array) {
+        // initialisation des min et max
+        T min = array[0];
+        T max = array[0];
+
+        for (int i = 1; i < array.length; i++) {
+            // Attention : à ce niveau le compilateur ne connait pas le type réel de T
+            // c'est normal, cette information n'est connue qu'à l'appel de la fonction
+            // nous ne pouvons donc pas utiliser d'opérateur de comparaison ici
+            // par contre T hérite de "Comparable<T>"
+            // donc T détient la méthode "compareTo"
+            // compareTo renvoie un nombre négatif si array[i] est inférieur à min
+            if (array[i].compareTo(min) < 0) {
+                min = array[i];
+            }
+            if (array[i].compareTo(max) > 0) {
+                max = array[i];
+            }
+        }
+
+        ArrayList<T> result = new ArrayList<>();
+        result.add(min);
+        result.add(max);
         return result;
     }
 
