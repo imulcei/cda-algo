@@ -103,7 +103,7 @@ public class GrandTrois {
         }
 
         if (salary < 1800) {
-            rate = 10;
+            rate += 10;
         }
 
         if (rate >= 50) {
