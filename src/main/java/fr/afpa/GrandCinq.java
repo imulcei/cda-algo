@@ -196,8 +196,21 @@ public class GrandCinq {
     public static double[] manipulateArray(double[] arrayIntegers) {
         double sumArray = average(arrayIntegers);
         double[] result = searchingIndexes(arrayIntegers);
-        
+
         double[] newArray = { sumArray, result[0], result[1] };
         return newArray;
+    }
+
+    /**
+     * 
+     * @param arrayIntegers Tableau d'entiers
+     * @return Renvoie un tableau d'entiers inversé par rapport à celui en entrée
+     */
+    public static int[] invert(int[] arrayIntegers) {
+        int[] newArrayIntegers = new int[arrayIntegers.length];
+        for (int i = 0; i < arrayIntegers.length; i++) {
+            newArrayIntegers[arrayIntegers.length - i - 1] = arrayIntegers[i];
+        }
+        return newArrayIntegers;
     }
 }

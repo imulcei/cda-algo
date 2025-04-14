@@ -59,4 +59,11 @@ public class GrandCinqTest {
         double[] result = GrandCinq.manipulateArray(positiveNum);
         System.out.println(Arrays.toString(result));
     }
+
+    @Test
+    public void invertTest() {
+        int[] positiveNum = { 1, 2, 3, 4, 5, 6 };
+        int[] result = GrandCinq.invert(positiveNum);
+        System.out.println(Arrays.toString(result));
+    }
 }
