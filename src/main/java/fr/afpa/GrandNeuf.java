@@ -94,9 +94,27 @@ public class GrandNeuf {
      * @return Renvoie les indexes du 1e et dernier caractère
      */
     public static int[] locateString(String str, String subStr) {
-        int indexStart = str.indexOf(subStr);
-        int indexEnd = str.lastIndexOf(subStr);
-        int[] result = { indexStart, indexEnd };
+        int i = 0;
+        int j = 0;
+        int indexStart = 0;
+        boolean found = false;
+        while (!found && i < str.length()) {
+            if (str.charAt(i) == subStr.charAt(j)) {
+                if (j == 0) {
+                    indexStart = i;
+                }
+                j++;
+            }
+            i++;
+            if (j == subStr.length()) {
+                found = true;
+            }
+        }
+        if (!found) {
+            return new int[] { -1, -1 };
+        }
+
+        int[] result = { indexStart, indexStart + subStr.length() - 1 };
         return result;
     }
 }
