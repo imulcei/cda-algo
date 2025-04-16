@@ -70,15 +70,15 @@ public class GrandCinq {
      *         l'indice du nombre min et le second est l'indice du nombre max
      */
     public static int[] searchingIndexes(int[] array) {
-        int min = array[0];
-        int max = array[0];
+        int min = 0;
+        int max = 0;
 
         for (int i = 1; i < array.length; i++) {
-            if (array[i] < min) {
-                min = array[i];
+            if (array[i] < array[min]) {
+                min = i;
             }
-            if (array[i] > max) {
-                max = array[i];
+            if (array[i] > array[max]) {
+                max = i;
             }
         }
 
@@ -107,9 +107,9 @@ public class GrandCinq {
      * Solution pour la fonction "searchingIndexes" en utilisant la généricité.
      * 
      * Le 'T' peut être vu comme un joker.
-     * C'est le compilateur qui déduira le type en fonction du contexte d'appel. 
+     * C'est le compilateur qui déduira le type en fonction du contexte d'appel.
      * 
-     * @param <T> Le type du tableau à tratier
+     * @param <T>   Le type du tableau à tratier
      * @param array Le tableau à traiter
      * @return La ArrayList résultat
      */
