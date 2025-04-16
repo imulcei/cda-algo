@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 public class GrandCinq {
 
+    // TODO main superflue, à supprimer
     public static void main(String[] args) {
 
     }
@@ -59,6 +60,11 @@ public class GrandCinq {
      * @return Renvoie la somme entre les deux index.
      */
     public static int sumTwoIndex(int[] arrayIndex, int i, int j) {
+        // TODO la somme doit être l'addition des éléments des cases entres les index
+        // par exemple pour le tableau [ 2, 4, 2, 4 ]
+        // et i = 1
+        // puis j = 3
+        // le résultat doit être 6
         int result = arrayIndex[i] + arrayIndex[j];
         return result;
     }
@@ -86,7 +92,13 @@ public class GrandCinq {
         return result;
     }
 
-    public static double[] searchingIndexes(double[] array) {
+    /**
+     * Recherche les valeurs maximum et minimum d'un tableau.
+     * 
+     * ✅ okay
+     * @return Un tableau 1D. Index 0 : min, index 1 : max
+     */
+    public static double[] searchMinMaxValues(double[] array) {
         double min = array[0];
         double max = array[0];
 
@@ -148,20 +160,24 @@ public class GrandCinq {
      *         l'est pas
      */
     public static boolean swap(int[] arrayIndex, int i, int j) {
+        // TODO simplifier ce test
         if ((0 >= i && i < arrayIndex.length) || (0 >= j && j < arrayIndex.length)) {
             return false;
         } else {
-            int[] arrayIndexBis = arrayIndex;
+            // TODO supprimer la ligne suivante
+            // le paramètre arrayIndex est en "entrée-sortie" -> modifié
+            // int[] arrayIndexBis = arrayIndex;
             int temp = arrayIndex[i];
-            arrayIndexBis[i] = arrayIndex[j];
-            arrayIndexBis[j] = temp;
-            System.out.println(Arrays.toString(arrayIndexBis));
+            arrayIndex[i] = arrayIndex[j];
+            arrayIndex[j] = temp;
+            System.out.println(Arrays.toString(arrayIndex));
             return true;
         }
     }
 
     /**
      * 
+     * TODO : renommer paramètre, tu peux mettre "array" tout court vu que le type est déjà indiqué
      * @param arrayIntegers Tableau d'entiers
      * @return Renvoie la moyenne des entiers du tableau.
      */
@@ -177,6 +193,7 @@ public class GrandCinq {
         return result;
     }
 
+    // TODO renommer paramètre, tableau de double et pas de integers
     public static double average(double[] arrayIntegers) {
         int i = 0;
         double sum = 0;
@@ -191,18 +208,20 @@ public class GrandCinq {
 
     /**
      * 
-     * @param arrayIntegers Tableau entré par l'utilisateur
+     * ✅ okay
+     * @param array Tableau entré par l'utilisateur
      */
-    public static double[] manipulateArray(double[] arrayIntegers) {
-        double sumArray = average(arrayIntegers);
-        double[] result = searchingIndexes(arrayIntegers);
+    public static double[] manipulateArray(double[] array) {
+        double sum = average(array);
+        double[] minMaxArray = searchMinMaxValues(array);
 
-        double[] newArray = { sumArray, result[0], result[1] };
-        return newArray;
+        double[] resultArray = { sum, minMaxArray[0], minMaxArray[1] };
+        return resultArray;
     }
 
     /**
      * 
+     * ✅ okay
      * @param arrayIntegers Tableau d'entiers
      * @return Renvoie un tableau d'entiers inversé par rapport à celui en entrée
      */

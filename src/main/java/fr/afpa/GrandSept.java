@@ -3,7 +3,7 @@ package fr.afpa;
 public class GrandSept {
 
     /**
-     * 
+     * ✅ okay
      * @param number Nombre de lignes et colonnes choisis
      */
     public static void pyramide(int number) {
@@ -18,7 +18,7 @@ public class GrandSept {
     }
 
     /**
-     * 
+     * ✅ okay
      * @param number Nombre de lignes et colonnes choisis
      */
     public static void triangle(int number) {

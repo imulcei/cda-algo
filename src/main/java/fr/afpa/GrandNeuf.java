@@ -3,7 +3,7 @@ package fr.afpa;
 public class GrandNeuf {
 
     /**
-     * 
+     * ✅ okay
      * @param str Phrase entrée par l'utilisateur
      * @return Renvoie le nombre de voyelles de la phrase
      */
@@ -23,7 +23,7 @@ public class GrandNeuf {
     }
 
     /**
-     * 
+     * ✅ okay
      * @param str Phrase entrée par l'utilisateur
      * @return Renvoie le nombre de majuscule dans la phrase
      */
@@ -39,7 +39,7 @@ public class GrandNeuf {
     }
 
     /**
-     * 
+     * ✅ okay
      * @param str Phrase entrée par l'utilisateur
      * @return Renvoie la phrase en majuscule
      */
@@ -49,7 +49,7 @@ public class GrandNeuf {
     }
 
     /**
-     * 
+     *✅ okay
      * @param str Phrase entrée par l'utilisateur
      * @return Renvoie le mirroir de la phrase
      */
@@ -63,7 +63,7 @@ public class GrandNeuf {
     }
 
     /**
-     * 
+     * ✅ okay
      * @param str Phrase entrée par l'utilisateur
      * @return Renvoie la phrase en camel case
      */
@@ -88,7 +88,7 @@ public class GrandNeuf {
     }
 
     /**
-     * 
+     * ✅ okay
      * @param str    Phrase entrée par l'utilisateur
      * @param subStr Sous-chaine à localiser
      * @return Renvoie les indexes du 1e et dernier caractère

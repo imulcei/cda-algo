@@ -7,7 +7,7 @@ public class GrandSix {
     }
 
     /**
-     * 
+     * ✅ okay
      * @param array2D Un tableau 2D d'entiers
      * @return Renvoie la somme des entiers du tableau 2D
      */
@@ -22,7 +22,7 @@ public class GrandSix {
     }
 
     /**
-     * 
+     * ✅ okay
      * @param array2D      Tableau d'entiers 2D
      * @param width        Nombre de colonnes dans le tableau
      * @param height       Nombre de lignes dans le tableau

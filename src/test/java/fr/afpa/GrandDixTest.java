@@ -6,6 +6,7 @@ public class GrandDixTest {
 
     @Test
     public void conversionBaseDixTest() {
+        // TODO mettre des "assert" pour valider les valeurs retournées par les fonctions
         int res = GrandDix.conversionBaseDix("0110");
         System.out.println(res);
 
@@ -18,6 +19,8 @@ public class GrandDixTest {
 
     @Test
     public void conversionBinaireTest() {
+        // TODO mettre des "assert" pour valider les valeurs retournées par les fonctions
+
         String res = GrandDix.conversionBinaire(0);
         System.out.println(res);
     }

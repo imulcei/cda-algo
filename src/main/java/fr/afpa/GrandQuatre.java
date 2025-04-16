@@ -9,7 +9,7 @@ public class GrandQuatre {
     }
 
     /**
-     * 
+     * ✅ okay
      * @param followers Nombre de followers au jour 1
      * @return Renvoie le nombre de followers estimé au bout de 12 mois
      */
@@ -24,6 +24,7 @@ public class GrandQuatre {
         return followersOneYear;
     }
 
+    // ✅ okay
     public static double followersYtbTwo(int followers) {
         double monthlyIncrease = 0.05;
         double followersOneYear = followers;
@@ -41,6 +42,7 @@ public class GrandQuatre {
     public static int addIntegers(int number) {
         int result = 0;
         int intNumber = 1;
+        // TODO serait-il possible d'avoir une solution sans l'utilisation d'une variable telle que "intNumber" ?
         for (int i = 0; i < number; i++) {
             result = result + intNumber;
             intNumber++;
@@ -49,7 +51,7 @@ public class GrandQuatre {
     }
 
     /**
-     * 
+     * ✅ okay
      * @param number Entier choisi par l'utilisateur
      * @return Renvoie Fizz si l'entier est divisible par 3, Buzz si l'entier est
      *         divisible par 5, Fizzbuzz si l'entier est divisible par 3 et 5.
@@ -79,7 +81,7 @@ public class GrandQuatre {
     }
 
     /**
-     * 
+     * ✅ okay
      * @param number Entier choisi par l'utilisateur
      * @return Renvoie la factorielle de l'entier number
      */

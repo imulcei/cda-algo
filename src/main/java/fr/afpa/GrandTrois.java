@@ -4,6 +4,8 @@ package fr.afpa;
  * Hello world!
  */
 public class GrandTrois {
+
+    // TODO supprimer "main" superflue
     public static void main(String[] args) {
 
     }
@@ -14,6 +16,8 @@ public class GrandTrois {
      * @return Renvoie si l'utilisateur est majeur ou non
      */
     public static boolean legalAge(int year) {
+        // TODO faire en sorte que le calcul s'adapte à l'année en cours
+        // plus d'information sur comment trouver l'année en cours : https://stackoverflow.com/questions/136419/get-integer-value-of-the-current-year-in-java
         int age = 2025 - year;
         if (age < 18) {
             return false;
@@ -53,7 +57,7 @@ public class GrandTrois {
     }
 
     /**
-     * 
+     * ✅ okay
      * @param userLetter Lettre choisie par l'utilisateur
      * @return Renvoie si la lettre de l'utilisateur est une voyelle ou non
      */
@@ -67,7 +71,7 @@ public class GrandTrois {
     }
 
     /**
-     * 
+     * ✅ okay
      * @param balance Solde bancaire de l'utilisateur
      * @param price   Prix de l'article
      * @return Renvoie si l'utilisateur peut acheter l'article ou non
@@ -84,13 +88,16 @@ public class GrandTrois {
     }
 
     /**
-     * 
+     * ✅ okay
      * @param situation Situation maritale de l'utilisateur
      * @param children  Nombre d'enfants
      * @param salary    Salaire de l'utilisateur
      * @return Renvoie le taux de participation en fonction du profil
      */
     public static String participationRate(char situation, int children, int salary) {
+        // TODO pourquoi initialiser "rate" à 50 ?
+        // existe-t-il un solution pour l'initialiser à une autre valeur ?
+        // indice : le premier if peut ne pas avoir besoin de son else
         int rate = 50;
         if (situation == 'C' || situation == 'c') {
             rate = 20;

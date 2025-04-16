@@ -9,6 +9,14 @@ public class GrandDix {
      */
     public static int conversionBaseDix(String str) {
         int result = Integer.parseInt(str, 2);
+        // TODO proposer une solution basée sur une boucle itérant sur les caractères de la chaîne ?
+        // par exemple avec:
+        // for (int i = str.length -1; i >= 0; i--)
+        // {
+        //      récupération du caractère -> transformation en int
+        //      calcul avec la puissance de 2
+        //      pour calculer une puissance de 2 en Java : https://codegym.cc/fr/groups/posts/utilisation-de-la-mthode-mathpow-en-java
+        // }
         return result;
     }
 
