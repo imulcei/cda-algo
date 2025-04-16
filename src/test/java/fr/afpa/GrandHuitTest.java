@@ -6,6 +6,6 @@ public class GrandHuitTest {
 
     @Test
     public void justePrixTest() {
-        GrandHuit.justePrix(50);
+        GrandHuit.justePrix();
     }
 }

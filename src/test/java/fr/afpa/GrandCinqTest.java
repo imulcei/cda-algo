@@ -30,8 +30,8 @@ public class GrandCinqTest {
 
     @Test
     public void sumTwoIndexTest() {
-        int[] positiveNum = { 1, 2, 3, 4, 5, 6 };
-        System.out.println(GrandCinq.sumTwoIndex(positiveNum, 2, 1));
+        int[] positiveNum = { 2, 4, 2, 4 };
+        System.out.println(GrandCinq.sumTwoIndex(positiveNum, 1, 3));
     }
 
     @Test

@@ -65,5 +65,8 @@ public class GrandTroisTest {
 
         String result3 = GrandTrois.participationRate('c', 0, 1400);
         assertEquals("Le taux de participation est de 30%.", result3);
+
+        String result4 = GrandTrois.participationRate('c', 5, 1400);
+        assertEquals("Le taux de participation est de 50%.", result4);
     }
 }
