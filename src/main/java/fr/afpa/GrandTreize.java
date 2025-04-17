@@ -2,33 +2,29 @@ package fr.afpa;
 
 public class GrandTreize {
 
+    /**
+     * 
+     * @param card_number
+     * @return Renvoie si le numéro de carte bancaire est valide ou non.
+     */
     public static boolean algorithmeDeLuhn(long card_number) {
         String card_numberStr = Long.toString(card_number);
-        int sum1 = 0;
-        int sum2 = 0;
-        for (int i = card_numberStr.length() - 2; i >= 0; i -= 2) {
+        int sum = 0;
+        boolean doubleIt = false;
+        for (int i = card_numberStr.length() - 1; i >= 0; i--) {
             int valueAtIndex = Character.getNumericValue(card_numberStr.charAt(i));
-            sum1 += sumDoubledNumber(valueAtIndex * 2);
-        }
-        if (card_numberStr.length() % 2 == 0) {
-            for (int i = 1; i < card_numberStr.length(); i += 2) {
-                int valueAtIndex2 = Character.getNumericValue(card_numberStr.charAt(i));
-                sum2 += valueAtIndex2;
+            if (doubleIt) {
+                sum += sumDoubledNumber(valueAtIndex * 2);
+            } else {
+                sum += valueAtIndex;
             }
-        } else {
-            for (int i = 0; i < card_numberStr.length(); i += 2) {
-                int valueAtIndex2 = Character.getNumericValue(card_numberStr.charAt(i));
-                sum2 += valueAtIndex2;
-            }
+            doubleIt = !doubleIt;
         }
-        int sum = sum1 + sum2;
-
         if (sum % 10 != 0) {
             return false;
         } else {
             return true;
         }
-
     }
 
     public static int sumDoubledNumber(int num) {

@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 public class GrandTreizeTest {
-    
+
     @Test
     public void algorithmeDeLuhnTest() {
         assertTrue(GrandTreize.algorithmeDeLuhn(79927398713L));
