@@ -4,6 +4,12 @@ import java.text.Normalizer;
 
 public class GrandDouze {
 
+    /**
+     * 
+     * @param str
+     * @return Renvoie vrai si la phrase entrée est un palindrome, faux si elle n'en
+     *         est pas un.
+     */
     public static boolean palindrome(String str) {
         String palindromeStr = "";
         String lowerCaseStr = str.replaceAll("[\\p{Punct}\\s-]", "").toLowerCase();
