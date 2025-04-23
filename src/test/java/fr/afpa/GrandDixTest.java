@@ -26,5 +26,13 @@ public class GrandDixTest {
         String res = GrandDix.conversionBinaire(10);
         System.out.println(res);
         assertEquals("1010", res);
+
+        String res1 = GrandDix.conversionBinaire(15);
+        System.out.println(res);
+        assertEquals("1111", res1);
+
+        String res2 = GrandDix.conversionBinaire(1497);
+        System.out.println(res);
+        assertEquals("10111011001", res2);
     }
 }
