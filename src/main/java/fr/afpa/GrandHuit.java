@@ -9,6 +9,7 @@ public class GrandHuit {
         justePrix();
     }
 
+    // ✅ Nickel
     public static void justePrix() {
         Scanner scanner = new Scanner(System.in);
         Random r = new Random();

@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class GrandOnze {
 
+    // TODO Je suppose que l'exercice attendait de faire la fusion sans la fonction
+    // sort de java
     /**
      * 
      * @param array1 Un tableau d'entiers triés dans l'ordre croissant

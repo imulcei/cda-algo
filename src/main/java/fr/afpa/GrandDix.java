@@ -2,6 +2,7 @@ package fr.afpa;
 
 public class GrandDix {
 
+    // ✅ Parfait
     /**
      * 
      * @param str Chaîne de caractères du nombre binaire à convertir
@@ -18,6 +19,7 @@ public class GrandDix {
         return result;
     }
 
+    // ✅ Parfait
     /**
      * 
      * @param str Chaîne de caractère du nombre binaire à convertir
