@@ -4,6 +4,7 @@ import java.text.Normalizer;
 
 public class GrandDouze {
 
+    // ✅ Parfait
     /**
      * 
      * @param str

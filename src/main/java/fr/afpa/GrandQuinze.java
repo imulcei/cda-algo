@@ -2,6 +2,9 @@ package fr.afpa;
 
 public class GrandQuinze {
 
+    // JavaDoc : expliquer l'utilité de la fonction et ce à quoi correspondent les
+    // paramètres d'entrée
+    // ✅ Parfait
     /**
      * 
      * @param arrayNumbers
@@ -16,6 +19,7 @@ public class GrandQuinze {
         return 0;
     }
 
+    // ✅ Parfait
     /**
      * 
      * @param str
