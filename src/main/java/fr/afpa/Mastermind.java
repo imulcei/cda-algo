@@ -7,53 +7,63 @@ import java.util.Scanner;
 public class Mastermind {
 
     public static void main(String[] args) {
-        mastermind();
+        Scanner scanner = new Scanner(System.in);
+        mastermind(scanner);
+        scanner.close();
     }
 
-    public static void mastermind() {
+    /**
+     * La fonction sert à jouer au Mastermind face à l'ordinateur
+     * 
+     * @param scanner Les essais du joueur
+     */
+    public static void mastermind(Scanner scanner) {
 
         // l'ordinateur choisit un nombre aléatoire
         int[] computerInput = computerChoice();
         System.out.println(Arrays.toString(computerInput));
 
-        // int[] playerInput = playerInput();
-        // System.out.println(Arrays.toString(playerInput));
-
         // boucle de jeu
         boolean isCorrect = false;
         int tentatives = 0;
-        int counterNumberOk = 0;
-        int counterNumberAlmostOk = 0;
-        boolean[] usedIndexComputer = new boolean[4];
-        boolean[] usedIndexPlayer = new boolean[4];
 
         while (!isCorrect && tentatives < 8) {
-            // on réinitialise les counters
-            counterNumberOk = 0;
-            counterNumberAlmostOk = 0;
-
             // demande au joueur d'entrer un nombre
             // nouvel essai du joueur si pas le bon nombre
-            int[] playerInput = playerInput();
+            int[] playerInput = playerInput(scanner);
             System.out.println(Arrays.toString(playerInput));
 
+            int counterNumberOk = 0;
+            int counterNumberAlmostOk = 0;
+            boolean[] usedIndexComputer = new boolean[4];
+            boolean[] usedIndexPlayer = new boolean[4];
+
             // on compare computerInput et playerInput
+            // chiffres bien placés
             for (int i = 0; i < 4; i++) {
                 if (computerInput[i] == playerInput[i]) {
-                    // System.out.println("Chiffre bien placé : " + i);
                     usedIndexComputer[i] = true;
                     usedIndexPlayer[i] = true;
                     counterNumberOk++;
                 }
+            }
+
+            // chiffres présents mais mal placés
+            for (int i = 0; i < 4; i++) {
+                if (usedIndexComputer[i]) {
+                    continue;
+                }
                 for (int j = 0; j < 4; j++) {
-                    if (computerInput[i] == playerInput[j] && i != j) {
-                        // System.out.println("Chiffre présent mais mal placé");
+                    if (computerInput[i] == playerInput[j] && !usedIndexPlayer[j]) {
+                        usedIndexComputer[i] = true;
+                        usedIndexPlayer[j] = true;
                         counterNumberAlmostOk++;
+                        break;
                     }
                 }
             }
 
-            System.out.println("Chiffre bien placé: " + counterNumberOk + ". Chiffre présent mais mal placés: "
+            System.out.println("Chiffres bien placés: " + counterNumberOk + ". Chiffres présents mais mal placés: "
                     + counterNumberAlmostOk);
 
             // vérifie la victoire du joueur
@@ -64,6 +74,10 @@ public class Mastermind {
 
             tentatives++;
         }
+        // si le joueur perd
+        if (!isCorrect) {
+            System.out.println("Dommage. La réponse était : " + Arrays.toString(computerInput));
+        }
     }
 
     /**
@@ -72,24 +86,21 @@ public class Mastermind {
      */
     public static int[] computerChoice() {
         int[] numbersToGuess = new int[4];
-        int i = 0;
-        while (i < 4) {
-            Random r = new Random();
-            int randomNumberComputer = r.nextInt(7);
-            numbersToGuess[i] += randomNumberComputer;
-            i++;
+        Random r = new Random();
+        for (int i = 0; i < 4; i++) {
+            numbersToGuess[i] = r.nextInt(8);
         }
         return numbersToGuess;
     }
 
     /**
      * 
-     * @return Renvoie le nombre de 4 chiffres entre 0 et 7 choisi par l'utilisateur
+     * @param scanner Les essais du joueur
+     * @return Renvoie un tableau de 4 entiers compris entre 0 et 7
      */
-    public static int[] playerInput() {
+    public static int[] playerInput(Scanner scanner) {
         boolean isValid = false;
         int[] playerInput = new int[4];
-        Scanner scanner = new Scanner(System.in);
 
         while (!isValid) {
             System.out.println("Choisir 4 chiffres entre 0 et 7.");
